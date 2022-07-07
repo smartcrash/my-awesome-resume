@@ -1,12 +1,13 @@
 <script setup lang="ts">
-// TODO: Add `mail` icon to email
 // TODO: Add GitHub link with icon
 // TODO: Add LinkedIn lnk with icon
-// TODO: Add liboard project
 
 import { format } from "date-fns";
 import Divider from "./components/Divider.vue";
+import EnvelopeIcon from "./components/EnvelopeIcon.vue";
+import GitHubIcon from "./components/GitHubIcon.vue";
 import Heading from "./components/Heading.vue";
+import LinkIcon from "./components/LinkIcon.vue";
 
 const formatDate = (date: Date) => format(date, "LLL y");
 
@@ -77,7 +78,7 @@ const experiece: {
     endDate: new Date(2021, 1, 0),
     bulletPoints: [
       "Completed successfully several projects receiving excellent qualification from my clients.",
-      "All my projects are related with JavaScript and\or PHP, witch are me strong points.",
+      "All my projects are related with JavaScript and\or PHP",
       "Working as freelancer have improved my communication and adaptability skills, valuable skills in this industry.",
     ],
     technologies: ["JavaScript", "Vue", "PHP", "Laravel"],
@@ -137,20 +138,59 @@ const certifications: {
     url: "https://freecodecamp.org/certification/diegodasilva/javascript-algorithms-and-data-structures",
   },
 ];
+
+const projects: {
+  name: string;
+  excerpt: string;
+  website?: string;
+  github: string;
+}[] = [
+  {
+    name: "Liboards",
+    excerpt:
+      "An Issue Tracker made with React and GraphQL, written in TypeScript.",
+    website: "https://liboards.space",
+    github: "https://github.com/smartcrash/liboards",
+  },
+
+  {
+    name: "Another TODO List",
+    excerpt:
+      "A simple and beautiful TODO list app made with React and GraphQL, written in TypeScript.",
+    github: "https://github.com/smartcrash/another-todo-list",
+  },
+];
+
+const links: { label: string; url: string }[] = [
+  { label: "GitHub", url: "https://github.com/smartcrash" },
+  {
+    label: "LinkedIn",
+    url: "https://linkedin.com/in/diego-da-silva-developer",
+  },
+  {
+    label: "Workana",
+    url: "https://workana.com/freelancer/93bb3861a382b4baacb8ca8ef792a426",
+  },
+];
 </script>
 
 <template>
   <main
-    class="mx-auto text-gray-700 space-y-5 px-10"
+    class="mx-auto text-gray-700 space-y-5 px-10 pt-5"
     :style="{ maxWidth: '1200px' }"
   >
-    <section class="text-center -mb-5">
-      <h1 class="text-6xl">Diego <span class="font-bold">Da'Silva</span></h1>
+    <section class="text-center -mb-5 relative">
+      <h1 class="text-6xl font-mono font-black tracking-tighter">
+        Diego Da'Silva
+      </h1>
       <h5 class="space-x-3 mt-5">
         <span>Full-Stack Software Developer</span>
         <span>|</span>
         <span
-          ><a href="mailto:smartcrashomg@gmail.com">smartcrashomg@gmail.com</a>
+          ><a href="mailto:smartcrashomg@gmail.com" class="underline">
+            <EnvelopeIcon />
+            smartcrashomg@gmail.com</a
+          >
         </span>
 
         <span>|</span>
@@ -244,14 +284,43 @@ const certifications: {
     </section>
 
     <section>
+      <Heading>Projects</Heading>
+      <Divider />
+
+      <ul class="list-disc space-y-2">
+        <li v-for="{ name, excerpt, website, github } in projects">
+          <div class="flex space-x-2">
+            <h3 class="text-lg font-bold">{{ name }}</h3>
+
+            <template v-if="website">
+              <span>|</span>
+              <a :href="website" class="underline" target="_blank">
+                <LinkIcon class="pr-1" />
+                {{ website.replace("https://", "") }}</a
+              >
+            </template>
+
+            <span>|</span>
+            <a :href="github" class="underline" target="_blank">
+              <GitHubIcon class="pr-1" />{{
+                github?.replace("https://", "")
+              }}</a
+            >
+          </div>
+          <p class="text-sm">{{ excerpt }}</p>
+        </li>
+      </ul>
+    </section>
+
+    <section>
       <Heading>Certifications</Heading>
       <Divider />
 
       <ul class="space-y-1 list-disc">
         <li v-for="{ title, emitter, date, url } in certifications">
           <div class="flex space-x-2 items-center text-lg">
-            <a :href="url">
-              <h5 class="font-bold hover:underline">{{ title }}</h5>
+            <a :href="url" class="underline">
+              <h5 class="font-bold">{{ title }}</h5>
             </a>
             <span>|</span>
             <h6>{{ emitter }}</h6>
