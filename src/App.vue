@@ -5,6 +5,8 @@
 // TODO: Add liboard project
 
 import { format } from "date-fns";
+import Divider from "./components/Divider.vue";
+import Heading from "./components/Heading.vue";
 
 const formatDate = (date: Date) => format(date, "LLL y");
 
@@ -28,7 +30,7 @@ const frameworks = [
   "Laravel",
 ];
 
-const technologies = ["Jest", "Chai", "Mocha", "Cypress", "Git"];
+const technologies = ["Jest", "Chai", "Mocha", "Cypress", "Git", "CircleCI"];
 
 const databases = ["MySQL", "PostgreSQL", "MongoDB", "SQLite", "Redis"];
 
@@ -139,7 +141,7 @@ const certifications: {
 
 <template>
   <main
-    class="mx-auto text-gray-700 space-y-10 mx-10"
+    class="mx-auto text-gray-700 space-y-5 px-10"
     :style="{ maxWidth: '1200px' }"
   >
     <section class="text-center -mb-5">
@@ -157,11 +159,11 @@ const certifications: {
     </section>
 
     <section>
-      <h3 class="text-3xl font-bold">01. Skills</h3>
+      <Heading>Skills</Heading>
 
-      <hr class="border-gray-300 my-5" />
+      <Divider />
 
-      <dl class="grid grid-cols-8 gap-4">
+      <dl class="grid grid-cols-8 gap-1">
         <template v-for="{ title, children } in skills">
           <dt>
             <h6 class="font-bold">{{ title }}:</h6>
@@ -179,10 +181,11 @@ const certifications: {
     </section>
 
     <section>
-      <h3 class="text-3xl font-bold">02. Professional Experience</h3>
-      <hr class="border-gray-300 my-5" />
+      <Heading>Professional Experience</Heading>
 
-      <ul class="space-y-8 overflow-hidden">
+      <Divider />
+
+      <ul class="space-y-3 overflow-hidden">
         <li
           v-for="{
             company,
@@ -193,7 +196,7 @@ const certifications: {
             technologies,
           } in experiece"
         >
-          <article class="relative pl-16">
+          <article class="relative pl-10">
             <span class="flex col-span-2 items-center absolute top-1 left-0">
               <svg viewBox="0 0 12 12" class="w-3 h-3 mr-6 overflow-visible">
                 <circle cx="6" cy="6" r="6" fill="currentColor"></circle>
@@ -206,7 +209,7 @@ const certifications: {
               </svg>
             </span>
 
-            <div class="space-y-3">
+            <div class="space-y-2">
               <p class="text-sm">
                 {{ formatDate(startDate) }} - {{ formatDate(endDate) }}
               </p>
@@ -241,10 +244,10 @@ const certifications: {
     </section>
 
     <section>
-      <h3 class="text-3xl font-bold">03. Certifications</h3>
-      <hr class="border-gray-300 my-5" />
+      <Heading>Certifications</Heading>
+      <Divider />
 
-      <ul class="space-y-3 list-disc">
+      <ul class="space-y-1 list-disc">
         <li v-for="{ title, emitter, date, url } in certifications">
           <div class="flex space-x-2 items-center text-lg">
             <a :href="url">
