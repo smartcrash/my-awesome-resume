@@ -8,6 +8,7 @@ import EnvelopeIcon from "./components/EnvelopeIcon.vue";
 import GitHubIcon from "./components/GitHubIcon.vue";
 import Heading from "./components/Heading.vue";
 import LinkIcon from "./components/LinkIcon.vue";
+import LinkedinIcon from "./components/LinkedinIcon.vue";
 
 const formatDate = (date: Date) => format(date, "LLL y");
 
@@ -23,15 +24,23 @@ const languages = [
 ];
 
 const frameworks = [
+  "Vue",
   "React",
   "React Native",
-  "Vue",
   "GraphQL",
   "Express",
   "Laravel",
 ];
 
-const technologies = ["Jest", "Chai", "Mocha", "Cypress", "Git", "CircleCI"];
+const technologies = [
+  "TailwindCSS",
+  "Jest",
+  "Chai",
+  "Mocha",
+  "Cypress",
+  "Git",
+  "CircleCI",
+];
 
 const databases = ["MySQL", "PostgreSQL", "MongoDB", "SQLite", "Redis"];
 
@@ -81,7 +90,14 @@ const experiece: {
       "All my projects are related with JavaScript and\or PHP",
       "Working as freelancer have improved my communication and adaptability skills, valuable skills in this industry.",
     ],
-    technologies: ["JavaScript", "Vue", "PHP", "Laravel"],
+    technologies: [
+      "JavaScript",
+      "Vue",
+      "PHP",
+      "Laravel",
+      "MySQL",
+      "PostgreSQL",
+    ],
   },
 
   {
@@ -192,9 +208,20 @@ const links: { label: string; url: string }[] = [
             smartcrashomg@gmail.com</a
           >
         </span>
-
         <span>|</span>
-        <span>English and Spanish speaker</span>
+        <span>
+          <a
+            href="https://linkedin.com/in/diego-da-silva-developer"
+            class="underline"
+            target="_blank"
+          >
+            <LinkedinIcon class="pr-1" />
+            linkedin.com/in/diego-da-silva-developer</a
+          >
+        </span>
+        <!-- <span>English and Spanish speaker</span> -->
+        <span>|</span>
+        <span>EU Work Permit</span>
       </h5>
     </section>
 
