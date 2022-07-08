@@ -1,7 +1,4 @@
 <script setup lang="ts">
-// TODO: Add GitHub link with icon
-// TODO: Add LinkedIn lnk with icon
-
 import { format } from "date-fns";
 import Divider from "./components/Divider.vue";
 import EnvelopeIcon from "./components/EnvelopeIcon.vue";
@@ -219,7 +216,6 @@ const links: { label: string; url: string }[] = [
             linkedin.com/in/diego-da-silva-developer</a
           >
         </span>
-        <!-- <span>English and Spanish speaker</span> -->
         <span>|</span>
         <span>EU Work Permit</span>
       </h5>
