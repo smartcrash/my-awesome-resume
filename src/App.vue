@@ -21,8 +21,10 @@ const languages = [
 ];
 
 const frameworks = [
-  "Vue",
   "React",
+  "Vue",
+  "Angular",
+  "Svelte",
   "React Native",
   "GraphQL",
   "Express",
@@ -39,7 +41,14 @@ const technologies = [
   "CircleCI",
 ];
 
-const databases = ["MySQL", "PostgreSQL", "MongoDB", "SQLite", "Redis"];
+const databases = [
+  "MySQL",
+  "PostgreSQL",
+  "MongoDB",
+  "SQLite",
+  "Redis",
+  "WatermelonDB",
+];
 
 const skills: { title: string; children: string[] }[] = [
   { title: "Languages", children: [...languages] },
@@ -157,20 +166,39 @@ const projects: {
   excerpt: string;
   website?: string;
   github: string;
+  technologies: string[];
 }[] = [
   {
     name: "Liboards",
-    excerpt:
-      "An Issue Tracker made with React and GraphQL, written in TypeScript.",
+    excerpt: "An Issue Tracker to organize your projects",
     website: "https://liboards.space",
     github: "https://github.com/smartcrash/liboards",
+    technologies: [
+      "React",
+      "Express",
+      "GraphQL",
+      "TypeScript",
+      "Heroku",
+      "Vercel",
+      "Vitest",
+      "Jest",
+      "Cypress",
+    ],
   },
 
   {
     name: "Another TODO List",
-    excerpt:
-      "A simple and beautiful TODO list app made with React and GraphQL, written in TypeScript.",
+    excerpt: "A simple and beautiful TODO list app",
     github: "https://github.com/smartcrash/another-todo-list",
+    technologies: [
+      "React",
+      "Express",
+      "GraphQL",
+      "TypeScript",
+      "Vitest",
+      "Jest",
+      "Cypress",
+    ],
   },
 ];
 
@@ -196,7 +224,7 @@ const links: { label: string; url: string }[] = [
       <h1 class="text-6xl font-mono font-black tracking-tighter">
         Diego Da'Silva
       </h1>
-      <h5 class="space-x-3 mt-5">
+      <h5 class="space-x-3 mt-2">
         <span>Full-Stack Software Developer</span>
         <span>|</span>
         <span
@@ -310,8 +338,10 @@ const links: { label: string; url: string }[] = [
       <Heading>Projects</Heading>
       <Divider />
 
-      <ul class="list-disc space-y-2">
-        <li v-for="{ name, excerpt, website, github } in projects">
+      <ul class="grid grid-cols-2 grid-flow-col list-disc gap-16">
+        <li
+          v-for="{ name, excerpt, website, github, technologies } in projects"
+        >
           <div class="flex space-x-2">
             <h3 class="text-lg font-bold">{{ name }}</h3>
 
@@ -331,6 +361,17 @@ const links: { label: string; url: string }[] = [
             >
           </div>
           <p class="text-sm">{{ excerpt }}</p>
+
+          <p class="font-bold mt-2 mb-1">Technologies:</p>
+          <ul class="flex flex-wrap space-x-1 text-sm">
+            <li
+              v-for="(technologie, index) in technologies"
+              class="flex items-center"
+            >
+              {{ technologie }}
+              <span v-if="index < technologies.length - 1" class="mx-2">•</span>
+            </li>
+          </ul>
         </li>
       </ul>
     </section>
