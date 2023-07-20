@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { format } from "date-fns";
-import { chunk } from "lodash";
+import { chunk, orderBy } from "lodash";
 import Divider from "./components/Divider.vue";
 import EnvelopeIcon from "./components/EnvelopeIcon.vue";
 import GitHubIcon from "./components/GitHubIcon.vue";
@@ -99,43 +99,42 @@ const certifications: {
   emitter: string;
   url: string;
   date: Date;
-}[] = [
-    {
-      title: "Machine Learning",
-      emitter: "Coursera",
-      date: new Date(2021, 8, 0),
-      url: "https://www.coursera.org/account/accomplishments/verify/YNUELBFRPXER",
-    },
+}[] = orderBy([
+  {
+    title: "Machine Learning",
+    emitter: "Coursera",
+    date: new Date(2021, 8, 0),
+    url: "https://www.coursera.org/account/accomplishments/verify/YNUELBFRPXER",
+  },
 
-    {
-      title: "Natural Language Processing with Classification and Vector Spaces",
-      emitter: "Coursera",
-      date: new Date(2021, 10, 0),
-      url: "https://www.coursera.org/account/accomplishments/certificate/452UQT3FUFGM",
-    },
+  {
+    title: "Natural Language Processing with Classification and Vector Spaces",
+    emitter: "Coursera",
+    date: new Date(2021, 10, 0),
+    url: "https://www.coursera.org/account/accomplishments/certificate/452UQT3FUFGM",
+  },
 
-    {
-      title:
-        "Divide and Conquer, Sorting and Searching, and Randomized Algorithms",
-      emitter: "Coursera",
-      date: new Date(2021, 11, 0),
-      url: "https://www.coursera.org/account/accomplishments/verify/9C9T4CXA4DXK",
-    },
+  {
+    title:
+      "Divide and Conquer, Sorting and Searching, and Randomized Algorithms",
+    emitter: "Coursera",
+    date: new Date(2021, 11, 0),
+    url: "https://www.coursera.org/account/accomplishments/verify/9C9T4CXA4DXK",
+  },
 
-    {
-      title: "APIs and Microservices",
-      emitter: "freeCodeCamp",
-      date: new Date(2021, 7, 0),
-      url: "https://freecodecamp.org/certification/diegodasilva/apis-and-microservices",
-    },
-
-    {
-      title: "JavaScript Algorithms and Data Structures",
-      emitter: "freeCodeCamp",
-      date: new Date(2022, 5, 0),
-      url: "https://freecodecamp.org/certification/diegodasilva/javascript-algorithms-and-data-structures",
-    },
-  ];
+  {
+    title: "APIs and Microservices",
+    emitter: "freeCodeCamp",
+    date: new Date(2021, 7, 0),
+    url: "https://freecodecamp.org/certification/diegodasilva/apis-and-microservices",
+  },
+  {
+    title: "JavaScript Algorithms and Data Structures",
+    emitter: "freeCodeCamp",
+    date: new Date(2022, 5, 0),
+    url: "https://freecodecamp.org/certification/diegodasilva/javascript-algorithms-and-data-structures",
+  },
+], 'date', 'desc');
 
 const projects: {
   name: string;
@@ -310,25 +309,24 @@ const projects: {
       </ul>
     </section>
 
-    <section>
+    <section class="relative">
       <Heading>Certifications</Heading>
       <Divider />
 
-      <ul class="space-y-1 list-disc">
+      <ul class="space-y-1 list-disc pl-4">
         <li v-for="{ title, emitter, date, url } in certifications">
-          <div class="flex space-x-2 items-center text-lg">
+          <div class="flex justify-between space-x-2 items-center">
             <a :href="url" class="underline">
               <h5 class="font-bold">{{ title }}</h5>
             </a>
-            <span>|</span>
-            <h6>{{ emitter }}</h6>
+            <p class="text-sm">{{ formatDate(date) }}</p>
           </div>
-          <p class="text-sm">{{ formatDate(date) }}</p>
         </li>
       </ul>
 
-      <a class="underline block pt-5" href="https://www.linkedin.com/in/diego-da-silva-8a06411a2/details/certifications/"
-        target="_blank">See all certifications ></a>
+      <a class="underline block absolute top-1 right-0"
+        href="https://www.linkedin.com/in/diego-da-silva-8a06411a2/details/certifications/" target="_blank">See all
+        certifications ></a>
     </section>
   </main>
 </template>
