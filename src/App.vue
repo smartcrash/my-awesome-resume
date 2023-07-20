@@ -32,11 +32,27 @@ const skills: string[] = [
 const experiece: {
   company: string;
   startDate: Date;
-  endDate: Date;
+  endDate: Date | null;
   position: string;
   bulletPoints: string[];
   technologies: string[];
 }[] = [
+    {
+      company: "Bizcuit",
+      position: "Medior Software Developer",
+      startDate: new Date(2022, 9, 0),
+      endDate: null,
+      bulletPoints: [
+        "Handling incidents, bug fixes, and contributing to feature development",
+        "Swiftly resolving critical incidents to ensure minimal downtime",
+        "Collaborating with cross-functional teams for feature implementation",
+        "Optimizing application performance and monitoring metrics",
+        "Working closely with DevOps on efficient <strong>AWS</strong> resource utilization",
+        "Maintaining code quality through active code reviews",
+      ],
+      technologies: ["Node.js", "AWS Lambdas", "API Gateway"],
+    },
+
     {
       company: "Cliengo",
       position: "Back-End Developer",
@@ -207,7 +223,7 @@ const projects: {
 
       <Divider />
 
-      <dl class="grid grid-cols-4 pl-4 gap-1">
+      <dl class="grid grid-cols-4 pl-4 gap-1 text-base">
         <template v-for="(chunks, index) in chunk(skills, 4)">
           <ul class="list-disc">
             <li v-for="(skill, index) in chunks">
@@ -247,7 +263,7 @@ const projects: {
                   <h4 class="italic">{{ position }}</h4>
                   <span>|</span>
                   <p class="text-sm">
-                    {{ formatDate(startDate) }} - {{ formatDate(endDate) }}
+                    {{ formatDate(startDate) }} - {{ endDate ? formatDate(endDate) : 'Present' }}
                   </p>
                 </div>
               </div>
