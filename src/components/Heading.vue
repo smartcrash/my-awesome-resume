@@ -1,3 +1,3 @@
 <template>
-  <h3 class="text-3xl font-bold"><slot /></h3>
+  <h3 class="text-xl font-bold"><slot /></h3>
 </template>

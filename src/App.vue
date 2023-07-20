@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { format } from "date-fns";
+import { chunk } from "lodash";
 import Divider from "./components/Divider.vue";
 import EnvelopeIcon from "./components/EnvelopeIcon.vue";
 import GitHubIcon from "./components/GitHubIcon.vue";
@@ -9,51 +10,23 @@ import LinkedinIcon from "./components/LinkedinIcon.vue";
 
 const formatDate = (date: Date) => format(date, "LLL y");
 
-const languages = [
-  "JavaScript (ES6)",
-  "TypeScript",
+const skills: string[] = [
   "Node.js",
-  "HTML5",
-  "CSS3",
-  "PHP",
-  "SQL",
-  "Python",
-];
-
-const frameworks = [
+  "TypeScript",
+  "JavaScript",
   "React",
   "Vue",
-  "Angular",
   "Svelte",
   "React Native",
   "GraphQL",
-  "Express",
-  "Laravel",
-];
-
-const technologies = [
-  "TailwindCSS",
-  "Jest",
-  "Chai",
-  "Mocha",
-  "Cypress",
-  "Git",
-  "CircleCI",
-];
-
-const databases = [
+  "AWS",
+  "DepOps",
+  "Unit Testing",
+  "CI/CD",
+  "SQL",
+  "Python",
   "MySQL",
   "PostgreSQL",
-  "MongoDB",
-  "SQLite",
-  "Redis",
-  "WatermelonDB",
-];
-
-const skills: { title: string; children: string[] }[] = [
-  { title: "Languages", children: [...languages] },
-  { title: "Technologies", children: [...frameworks, ...technologies] },
-  { title: "Databases", children: [...databases] },
 ];
 
 const experiece: {
@@ -201,18 +174,6 @@ const projects: {
     ],
   },
 ];
-
-const links: { label: string; url: string }[] = [
-  { label: "GitHub", url: "https://github.com/smartcrash" },
-  {
-    label: "LinkedIn",
-    url: "https://linkedin.com/in/diego-da-silva-developer",
-  },
-  {
-    label: "Workana",
-    url: "https://workana.com/freelancer/93bb3861a382b4baacb8ca8ef792a426",
-  },
-];
 </script>
 
 <template>
@@ -220,19 +181,19 @@ const links: { label: string; url: string }[] = [
     class="mx-auto text-gray-700 space-y-5 px-10 pt-5"
     :style="{ maxWidth: '1200px' }"
   >
-    <section class="text-center -mb-5 relative">
-      <h1 class="text-6xl font-mono font-black tracking-tighter">
+    <section class="text-center relative">
+      <h1 class="text-3xl font-mono font-black tracking-tighter">
         Diego Da'Silva
       </h1>
       <h5 class="space-x-3 mt-2">
-        <span>Full-Stack Software Developer</span>
-        <span>|</span>
         <span
           ><a href="mailto:smartcrashomg@gmail.com" class="underline">
             <EnvelopeIcon />
             smartcrashomg@gmail.com</a
           >
         </span>
+        <span>|</span>
+        <a href="tel:+310622575275">+31 06 2257 52 75</a>
         <span>|</span>
         <span>
           <a
@@ -244,30 +205,22 @@ const links: { label: string; url: string }[] = [
             linkedin.com/in/diego-da-silva-developer</a
           >
         </span>
-        <span>|</span>
-        <span>EU Work Permit</span>
       </h5>
     </section>
 
     <section>
-      <Heading>Skills</Heading>
+      <Heading>Technical Skills</Heading>
 
       <Divider />
 
-      <dl class="grid grid-cols-8 gap-1">
-        <template v-for="{ title, children } in skills">
-          <dt>
-            <h6 class="font-bold">{{ title }}:</h6>
-          </dt>
-          <dd class="col-span-7">
-            <ul class="flex flex-wrap">
-              <li v-for="(child, index) in children" class="flex">
-                {{ child }}
-                <span v-if="index < children.length - 1" class="mx-2">•</span>
+      <dl class="grid grid-cols-4 pl-4 gap-1">
+        <template v-for="(chunks, index) in chunk(skills, 4)">
+            <ul class="list-disc">
+              <li v-for="(skill, index) in chunks">
+                {{ skill }}
               </li>
             </ul>
-          </dd></template
-        >
+          </template>
       </dl>
     </section>
 
