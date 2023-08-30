@@ -43,12 +43,11 @@ const experiece: {
       startDate: new Date(2022, 9, 0),
       endDate: null,
       bulletPoints: [
-        "Handling incidents, bug fixes, and contributing to feature development",
-        "Swiftly resolving critical incidents to ensure minimal downtime",
-        "Collaborating with cross-functional teams for feature implementation",
-        "Optimizing application performance and monitoring metrics",
+        "Maintaing legacy code and developed new features for the Bizcuit platform, using <strong>Node.js</strong>, <strong>JavaScript</strong>, <strong>TypeScript</strong>, <strong>React</strong>, <strong>GraphQL</strong>, <strong>AWS</strong>, and <strong>PostgreSQL</strong>",
         "Working closely with DevOps on efficient <strong>AWS</strong> resource utilization",
-        "Maintaining code quality through active code reviews",
+        "Swiftly resolving critical incidents to ensure minimal downtime",
+        "Optimizing application performance and monitoring metrics",
+        "Collaborating with cross-functional teams for feature implementation",
       ],
       technologies: ["Node.js", "AWS Lambdas", "API Gateway"],
     },
@@ -72,7 +71,7 @@ const experiece: {
       endDate: new Date(2021, 8, 0),
       bulletPoints: [
         "Played a pivotal role in the development of a substantial application, collaborating closely with a talented team, and gaining valuable insights into effective teamwork dynamics.",
-        "Demonstrated a remarkable ability to swiftly assimilate the team's workflow and proficiently navigate their tech stack, including <strong>JavaScript</strong>, <strong>Meteor JS</strong>, <strong>MongoDB</strong>, enabling me to contribute to new feature implementation within a mere couple of weeks.",
+        "Demonstrated a remarkable ability to swiftly assimilate the team's workflow and proficiently navigate their tech stack, including <strong>Node.js</strong>, <strong>JavaScript</strong>, <strong>Meteor JS</strong>, <strong>MongoDB</strong>, enabling me to contribute to new feature implementation within a mere couple of weeks.",
       ],
       technologies: ["JavaScript", "Meteor JS", "MongoDB", "CircleCI"],
     },
@@ -83,9 +82,9 @@ const experiece: {
       startDate: new Date(2020, 3, 0),
       endDate: new Date(2021, 1, 0),
       bulletPoints: [
-        "Consistently achieved outstanding client satisfaction by successfully delivering a diverse range of projects, all centered around <strong>JavaScript</strong> and/or <strong>PHP</strong> technologies.",
+        "Consistently achieved outstanding client satisfaction by successfully delivering a diverse range of projects, all centered around <strong>JavaScript</strong>, <strong>Node.js</strong> and/or <strong>PHP</strong> technologies.",
         "As a proactive freelancer, honed exceptional communication and adaptability skills, proving instrumental in navigating the demands of this dynamic industry.",
-        "Proficiently utilized a wide array of technologies, including <strong>JavaScript</strong>, <strong>Vue</strong>, <strong>PHP</strong>, <strong>Laravel</strong>, and databases like <strong>MySQL</strong> and <strong>PostgreSQL</strong>, to develop innovative solutions that exceed client expectations."
+        "Proficiently utilized a wide array of technologies, including <strong>Node.js</strong>, <strong>JavaScript</strong>, <strong>Vue</strong>, <strong>PHP</strong>, <strong>Laravel</strong>, and databases like <strong>MySQL</strong> and <strong>PostgreSQL</strong>, to develop innovative solutions that exceed client expectations."
       ],
       technologies: [
         "JavaScript",
@@ -104,7 +103,7 @@ const experiece: {
       endDate: new Date(2019, 12, 0),
       bulletPoints: [
         "Collaborated on the successful development of diverse products, ranging from Administrative Software and Desktop Applications to CMS and Web Sites, contributing to the acquisition of a robust skill set in the field.",
-        "Proficiently employed a variety of technologies, including <strong>JavaScript</strong>, <strong>Vue</strong>, <strong>Electron</strong> for desktop applications, and database management systems like <strong>MongoDB</strong> and <strong>PostgreSQL</strong>, to deliver high-quality solutions that met client requirements and industry standards."
+        "Proficiently employed a variety of technologies, including <strong>Node.js</strong>, <strong>JavaScript</strong>, <strong>Vue</strong>, <strong>Electron</strong> for desktop applications, and database management systems like <strong>MongoDB</strong> and <strong>PostgreSQL</strong>, to deliver high-quality solutions that met client requirements and industry standards."
       ],
       technologies: ["JavaScript", "Vue", "Electron", "MongoDB", "PostgreSQL"],
     },
