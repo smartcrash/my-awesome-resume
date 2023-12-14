@@ -35,7 +35,7 @@ const experiece: {
       startDate: new Date(2022, 9, 0),
       endDate: null,
       bulletPoints: [
-         "Enhanced a Node.js application by maintaining existing functionalities and implementing new features, while leveraging my <strong>AWS</strong> expertise to enhance infrastructure and optimize runtime monitoring.",
+         "Enhanced a Node.js application by maintaining existing functionalities and implementing new features, while leveraging my <strong>Node.js</strong> and <strong>AWS</strong> knowledge to enhance code quality and infrastructure.",
         "Successfully reduced the high GPU utilisation of the Production RDS instance from <strong>98%</strong> to a remarkable <strong>3%</strong>, enabling substantial downscaling and yielding significant savings in RDS-related expenses.",
         "Enhanced the observability of the production application, facilitating quicker error detection and the identification of performance bottlenecks.",
         "Demonstrated agility in resolving critical incidents promptly to ensure minimal downtime for users."
@@ -106,19 +106,12 @@ const certifications: {
   emitter: string;
   url: string;
   date: Date;
-}[] = orderBy([
+}[] = [
   {
     title: "Machine Learning",
     emitter: "Coursera",
     date: new Date(2021, 8, 0),
     url: "https://www.coursera.org/account/accomplishments/verify/YNUELBFRPXER",
-  },
-
-  {
-    title: "Natural Language Processing with Classification and Vector Spaces",
-    emitter: "Coursera",
-    date: new Date(2021, 10, 0),
-    url: "https://www.coursera.org/account/accomplishments/certificate/452UQT3FUFGM",
   },
 
   {
@@ -130,18 +123,12 @@ const certifications: {
   },
 
   {
-    title: "APIs and Microservices",
-    emitter: "freeCodeCamp",
-    date: new Date(2021, 7, 0),
-    url: "https://freecodecamp.org/certification/diegodasilva/apis-and-microservices",
+    title: "Natural Language Processing with Classification and Vector Spaces",
+    emitter: "Coursera",
+    date: new Date(2021, 10, 0),
+    url: "https://www.coursera.org/account/accomplishments/certificate/452UQT3FUFGM",
   },
-  {
-    title: "JavaScript Algorithms and Data Structures",
-    emitter: "freeCodeCamp",
-    date: new Date(2022, 5, 0),
-    url: "https://freecodecamp.org/certification/diegodasilva/javascript-algorithms-and-data-structures",
-  },
-], 'date', 'desc');
+]
 
 const projects: {
   name: string;
@@ -211,8 +198,6 @@ const projects: {
           </a>
         </span>
       </h5>
-
-      <p class="text-left mt-5">Experienced and highly skilled Software Engineer with a proven track record in enhancing software applications, optimizing infrastructure, and delivering exceptional results. With a background in <strong>Node.js</strong>, <strong>AWS</strong>, and a wide array of technologies, I have consistently demonstrated my ability to adapt and excel in dynamic work environments. I thrive on solving complex technical challenges, increasing efficiency, and improving user experiences. My recent experience at Bizcuit B.V showcases my expertise in <strong>AWS</strong> infrastructure, performance optimization, and incident resolution, which has led to substantial cost savings and enhanced application observability.</p>
     </section>
 
     <section>
