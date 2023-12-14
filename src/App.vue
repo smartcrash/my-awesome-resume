@@ -13,19 +13,11 @@ const formatDate = (date: Date) => format(date, "LLL y");
 const skills: string[] = [
   "Node.js",
   "TypeScript",
-  "JavaScript",
   "React",
-  "Vue",
-  "Svelte",
-  "React Native",
-  "GraphQL",
   "AWS",
   "DepOps",
-  "Unit Testing",
   "CI/CD",
-  "SQL",
-  "Python",
-  "MySQL",
+  "Docker",
   "PostgreSQL",
 ];
 
@@ -38,18 +30,17 @@ const experiece: {
   technologies: string[];
 }[] = [
     {
-      company: "Bizcuit",
+      company: "Bizcuit B.V",
       position: "Medior Software Developer",
       startDate: new Date(2022, 9, 0),
       endDate: null,
       bulletPoints: [
-        "Maintaing legacy code and developed new features for the Bizcuit platform, using <strong>Node.js</strong>, <strong>JavaScript</strong>, <strong>TypeScript</strong>, <strong>React</strong>, <strong>GraphQL</strong>, <strong>AWS</strong>, and <strong>PostgreSQL</strong>",
-        "Working closely with DevOps on efficient <strong>AWS</strong> resource utilization",
-        "Swiftly resolving critical incidents to ensure minimal downtime",
-        "Optimizing application performance and monitoring metrics",
-        "Collaborating with cross-functional teams for feature implementation",
+         "Enhanced a Node.js application by maintaining existing functionalities and implementing new features, while leveraging my <strong>AWS</strong> expertise to enhance infrastructure and optimize runtime monitoring.",
+        "Successfully reduced the high GPU utilisation of the Production RDS instance from <strong>98%</strong> to a remarkable <strong>3%</strong>, enabling substantial downscaling and yielding significant savings in RDS-related expenses.",
+        "Enhanced the observability of the production application, facilitating quicker error detection and the identification of performance bottlenecks.",
+        "Demonstrated agility in resolving critical incidents promptly to ensure minimal downtime for users."
       ],
-      technologies: ["Node.js", "AWS Lambdas", "API Gateway"],
+      technologies: [],
     },
 
     {
@@ -84,10 +75,11 @@ const experiece: {
       bulletPoints: [
         "Consistently achieved outstanding client satisfaction by successfully delivering a diverse range of projects, all centered around <strong>JavaScript</strong>, <strong>Node.js</strong> and/or <strong>PHP</strong> technologies.",
         "As a proactive freelancer, honed exceptional communication and adaptability skills, proving instrumental in navigating the demands of this dynamic industry.",
-        "Proficiently utilized a wide array of technologies, including <strong>Node.js</strong>, <strong>JavaScript</strong>, <strong>Vue</strong>, <strong>PHP</strong>, <strong>Laravel</strong>, and databases like <strong>MySQL</strong> and <strong>PostgreSQL</strong>, to develop innovative solutions that exceed client expectations."
+        "Proficiently utilized a wide array of technologies, including <strong>Node.js</strong>, <strong>JavaScript</strong>, <strong>React</strong>, <strong>Vue</strong>, <strong>PHP</strong>, <strong>Laravel</strong>, and databases like <strong>MySQL</strong> and <strong>PostgreSQL</strong>, to develop innovative solutions that exceed client expectations."
       ],
       technologies: [
         "JavaScript",
+        "React",
         "Vue",
         "PHP",
         "Laravel",
@@ -103,9 +95,9 @@ const experiece: {
       endDate: new Date(2019, 12, 0),
       bulletPoints: [
         "Collaborated on the successful development of diverse products, ranging from Administrative Software and Desktop Applications to CMS and Web Sites, contributing to the acquisition of a robust skill set in the field.",
-        "Proficiently employed a variety of technologies, including <strong>Node.js</strong>, <strong>JavaScript</strong>, <strong>Vue</strong>, <strong>Electron</strong> for desktop applications, and database management systems like <strong>MongoDB</strong> and <strong>PostgreSQL</strong>, to deliver high-quality solutions that met client requirements and industry standards."
+        "Proficiently employed a variety of technologies, including <strong>Node.js</strong>, <strong>JavaScript</strong>, <strong>React</strong>, <strong>Vue</strong>, <strong>Electron</strong> for desktop applications, and database management systems like <strong>MongoDB</strong> and <strong>PostgreSQL</strong>, to deliver high-quality solutions that met client requirements and industry standards."
       ],
-      technologies: ["JavaScript", "Vue", "Electron", "MongoDB", "PostgreSQL"],
+      technologies: ["JavaScript", "React", "Vue", "Electron", "MongoDB", "PostgreSQL"],
     },
   ];
 
@@ -194,11 +186,15 @@ const projects: {
 </script>
 
 <template>
-  <main class="mx-auto text-gray-700 space-y-5 px-10 pt-5" :style="{ maxWidth: '1200px' }">
+  <main class="mx-auto text-gray-700 space-y-5 px-10 pt-8" :style="{ maxWidth: '1200px' }">
     <section class="text-center relative">
-      <h1 class="text-3xl font-mono font-black tracking-tighter">
+      <h1 class="text-4xl font-black">
         Diego Da'Silva
       </h1>
+
+      <h2 class="text-xl italic mb-5">
+        Software Engineer
+      </h2>
       <h5 class="space-x-3 mt-2">
         <span><a href="mailto:smartcrashomg@gmail.com" class="underline">
             <EnvelopeIcon />
@@ -215,6 +211,8 @@ const projects: {
           </a>
         </span>
       </h5>
+
+      <p class="text-left mt-5">Experienced and highly skilled Software Engineer with a proven track record in enhancing software applications, optimizing infrastructure, and delivering exceptional results. With a background in <strong>Node.js</strong>, <strong>AWS</strong>, and a wide array of technologies, I have consistently demonstrated my ability to adapt and excel in dynamic work environments. I thrive on solving complex technical challenges, increasing efficiency, and improving user experiences. My recent experience at Bizcuit B.V showcases my expertise in <strong>AWS</strong> infrastructure, performance optimization, and incident resolution, which has led to substantial cost savings and enhanced application observability.</p>
     </section>
 
     <section>
@@ -222,8 +220,8 @@ const projects: {
 
       <Divider />
 
-      <dl class="grid grid-cols-4 pl-4 gap-1 text-base">
-        <template v-for="(chunks, index) in chunk(skills, 4)">
+      <dl class="grid grid-cols-3 pl-4 gap-1 text-base">
+        <template v-for="(chunks, index) in chunk(skills, 3)">
           <ul class="list-disc">
             <li v-for="(skill, index) in chunks">
               {{ skill }}
